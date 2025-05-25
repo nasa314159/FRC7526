@@ -25,13 +25,14 @@ class Robot(wpilib.TimedRobot):
         return super().robotInit()
     def autonomousInit(self):#run once each time the robot enters autonomous mode
         self.time.restart()
+
     def autonomousPeriodic(self):#called periodically during autonomous
         if self.time.get()<2.0:
             self.robotDrive.arcadeDrive(xSpeed=0.5,zRotation=0,squareInputs=False)
         else:
             self.robotDrive.stopMotor()
     def teleopInit(self):#called once each time the robot enters teleoperated mode
-        
+        #加油!!!
     def teleopPeriodic(self):#called periodically during teleoperated mode
         self.robotDrive.arcadeDrive(
             self.controller.getLeftY(),self.controller.getRightX()
