@@ -1,10 +1,7 @@
-import rev
 import commands2
-import wpilib
-from wpilib.drive import DifferentialDrive
 from rev import SparkMax
 from rev import SparkMaxConfig
-import wpilib.drive
+
 
 class Drivesubsystem(commands2.Subsystem):
     def __init__(self):    
@@ -29,7 +26,7 @@ class Drivesubsystem(commands2.Subsystem):
         cfg_right2.follow(self.right1, False)
         self.right2.configure(cfg_right2, SparkMax.ResetMode.kNoResetSafeParameters, SparkMax.PersistMode.kNoPersistParameters)
 
-        # 建立差速驅動物件
+
 
 
 
