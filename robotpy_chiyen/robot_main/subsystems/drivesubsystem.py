@@ -30,6 +30,6 @@ class Drivesubsystem(commands2.Subsystem):
         self.right2.configure(cfg_right2, SparkMax.ResetMode.kNoResetSafeParameters, SparkMax.PersistMode.kNoPersistParameters)
 
         # 建立差速驅動物件
-        self.drive = DifferentialDrive(self.left1, self.right1)
-        self.drive.setMaxOutput(0.5)
+
+
 
