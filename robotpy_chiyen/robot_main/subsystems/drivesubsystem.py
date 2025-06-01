@@ -1,10 +1,12 @@
 import commands2
 from rev import SparkMax
 from rev import SparkMaxConfig
+from wpilib.drive import DifferentialDrive
 
 
 class Drivesubsystem(commands2.Subsystem):
-    def __init__(self):    
+    def __init__(self):
+        super().__init__()    
         self.left1 = SparkMax(1, SparkMax.MotorType.kBrushed)
         self.left2 = SparkMax(2, SparkMax.MotorType.kBrushed)
         self.right1 = SparkMax(3, SparkMax.MotorType.kBrushed)
@@ -25,6 +27,13 @@ class Drivesubsystem(commands2.Subsystem):
         cfg_right2 = SparkMaxConfig()
         cfg_right2.follow(self.right1, False)
         self.right2.configure(cfg_right2, SparkMax.ResetMode.kNoResetSafeParameters, SparkMax.PersistMode.kNoPersistParameters)
+
+        self.drive = DifferentialDrive(self.left1,self.right1)
+        self.drive.setMaxOutput(0.4)
+
+
+    def arcadeDrive(self, fwd, rot):
+        self.drive.arcadeDrive(fwd, rot)
 
 
 

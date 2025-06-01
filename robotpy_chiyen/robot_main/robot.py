@@ -8,3 +8,8 @@ class MyRobot(commands2.TimedCommandRobot):
     def robotInit(self):
         # 創建 RobotContainer 的實例，管理子系統、指令和控制器
         self.container = RobotContainer() 
+
+
+    def robotPeriodic(self):
+        # 指令排程器：會自動執行 commands 的 execute()
+        commands2.CommandScheduler.getInstance().run()
