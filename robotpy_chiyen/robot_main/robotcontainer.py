@@ -22,4 +22,5 @@ class RobotContainer:
 
         # 執行 arcadeDrive（前後 + 左右轉）
         self.drivecontrol.arcadeDrive(forward, turn)
+        a = 123
 
